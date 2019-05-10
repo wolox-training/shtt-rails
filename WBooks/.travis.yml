@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.6.1
+
+services:
+  - postgresql
+
+before_install:
+  - "echo '--colour' > ~/.rspec"
+  - "echo 'gem: --no-document' > ~/.gemrc"
+  - gem update --system
+
+script:
+  - bundle install - jobs=3 - retry=3
+  - bundle exec rubocop app spec -R --format simple
+
+cache:
+  bundler: true
+  
