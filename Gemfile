@@ -28,7 +28,11 @@ gem 'puma', '~> 3.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop', require: false
+  gem 'database_cleaner', '~> 1.7.0'
+  gem 'factory_bot', '~> 5.0.2'
+  gem 'faker', '~> 1.9.3'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'rubocop', '~> 0.68.1', require: false
 end
 
 group :development do
