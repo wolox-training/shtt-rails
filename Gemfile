@@ -43,3 +43,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise_token_auth', '~> 1.1.0'
 gem 'omniauth', '~> 1.9.0'
+
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'wor-paginate', '~> 0.1.4'
