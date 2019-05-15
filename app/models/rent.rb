@@ -1,4 +1,5 @@
 class Rent < ApplicationRecord
+  include Concerns::SearchFilters
   belongs_to :user
   belongs_to :book
   validates_associated :user, :book
