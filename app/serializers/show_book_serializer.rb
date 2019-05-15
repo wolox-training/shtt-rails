@@ -1,3 +1,3 @@
 class ShowBookSerializer < BookSerializer
-  attributes :actual_rent
+  attributes :current_rent
 end
