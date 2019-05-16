@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Registro creado <%= @current_date%> </p>
+    <h1><%= @user['first_name'] %> <%= @user['last_name'] %></h1>
+    <p>
+      Acabas de registrar correctamente la renta del libro <%= @book[:title] %>
+      del author <%= @book['author'] %>.
+    </p>
+    <p>
+      Recuerda que la renta del libro quedó registrada desde el día <%= @rent['start_date_rent'] %>
+      hasta el día <%= @rent['end_date_rent'] %>
+    </p>
+    <p>Que tengas un gran día!</p>
+  </body>
+</html>
