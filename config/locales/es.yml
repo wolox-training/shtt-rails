@@ -1,0 +1,5 @@
+es:
+  record_created: "Registro creado %{date}"
+  register_succesfull: "La renta del libro %{title} del autor %{author} realizó correctamente"
+  info_rent: "Recuerda que la renta se realizó del día %{start_date} hasta %{end_date}, ten presente la fecha límite"
+  email_regards: "Te deseamos un gran día"

@@ -30,4 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  record_created: "Record created at %{date}"
+  register_succesfull: "The rent of the book %{title} from the author %{author} was done correctly"
+  info_rent: "Remember that the rent was made from the day %{start_date} to %{end_date}, keep in mind the deadline"
+  email_regards: "We wish you a great day"
