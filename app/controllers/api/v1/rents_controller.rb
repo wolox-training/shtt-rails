@@ -1,7 +1,6 @@
 module Api
   module V1
-    class RentsController < ApplicationController
-      before_action :authenticate_user!
+    class RentsController < ApiController
 
       def index
         render_paginated Rent

@@ -1,7 +1,6 @@
 module Api
   module V1
-    class BooksController < ApplicationController
-      before_action :authenticate_user!
+    class BooksController < ApiController
 
       def index
         render_paginated Book, each_serializer: IndexBookSerializer
