@@ -7,6 +7,7 @@ module Api
 
       def create
         rent = Rent.create!(rent_params)
+        RentMailer.with(rent_id: rent.id).rent_book_email.deliver_later
         render json: rent, status: :created if rent.valid?
       end
 
