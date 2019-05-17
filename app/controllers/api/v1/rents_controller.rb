@@ -9,6 +9,7 @@ module Api
       def create
         rent = Rent.create(rent_params)
         auhorized = authorize rent
+        RentMailer.with(rent_id: rent.id).rent_book_email.deliver_later
         render json: auhorized, status: :created if rent.valid?
       end
 
