@@ -47,6 +47,10 @@ Rails.application.configure do
 
   config.read_encrypted_secrets = true
 
+  config.active_job.queue_adapter = :sidekiq
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     user_name: Rails.application.secrets.mailer[:user_name],
