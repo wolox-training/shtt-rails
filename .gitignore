@@ -17,3 +17,7 @@
 
 # Ignore test folder
 /test/*
+
+# Ignore env files
+.env
+.env.*

@@ -29,6 +29,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'database_cleaner', '~> 1.7.0'
+  gem 'dotenv-rails', '~> 2.7.2'
   gem 'factory_bot', '~> 5.0.2'
   gem 'faker', '~> 1.9.3'
   gem 'rspec-rails', '~> 3.8'
@@ -50,5 +51,8 @@ gem 'omniauth', '~> 1.9.0'
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'wor-paginate', '~> 0.1.4'
+
+gem 'redis-namespace', '~> 1.6.0'
+gem 'sidekiq', '~> 5.2.7'
 
 gem 'pundit', '~> 2.0.1'
