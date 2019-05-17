@@ -2,12 +2,14 @@ module Api
   module V1
     class RentsController < ApiController
       def index
-        render_paginated policy_scope Rent
+        scope = policy_scope Rent
+        render_paginated scope
       end
 
       def create
-        authorize rent = Rent.create(rent_params)
-        render json: rent, status: :created if rent.valid?
+        rent = Rent.create(rent_params)
+        auhorized = authorize rent
+        render json: auhorized, status: :created if rent.valid?
       end
 
       private

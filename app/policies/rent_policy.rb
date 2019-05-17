@@ -6,6 +6,6 @@ class RentPolicy < ApplicationPolicy
   end
 
   def create?
-    user.present?
+    user.present? && record.user == user
   end
 end
