@@ -4,6 +4,7 @@ class RentMailer < ApplicationMailer
     @user = @rent.user
     @book = @rent.book
     @current_date = DateTime.current
+    I18n.locale = @user[:locale] || I18n.default_locale
     mail(to: @user[:email], subject: 'Info rent book')
   end
 end
