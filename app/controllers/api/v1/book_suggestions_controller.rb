@@ -1,7 +1,7 @@
 module Api
   module V1
     class BookSuggestionsController < ApiController
-      skip_before_action :authenticate_user!, only: [:create] 
+      skip_before_action :authenticate_user!, only: [:create]
       def create
         book_s = BookSuggestion.create(book_suggestion_params)
         if book_s.valid?
