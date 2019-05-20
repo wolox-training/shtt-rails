@@ -54,3 +54,5 @@ gem 'wor-paginate', '~> 0.1.4'
 
 gem 'redis-namespace', '~> 1.6.0'
 gem 'sidekiq', '~> 5.2.7'
+
+gem 'pundit', '~> 2.0.1'
