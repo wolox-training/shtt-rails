@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index] do
         resources :rents, only: [:index, :create]
       end
+      get 'open_library/:isbn', to: 'open_library#show'
     end
   end
 end
