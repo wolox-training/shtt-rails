@@ -8,4 +8,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User
   has_many :rents, dependent: :destroy
+  has_many :book_suggestions, dependent: :destroy
 end
