@@ -8,16 +8,20 @@ class OpenLibrary
   end
 
   def books
-    process_response self.class.get('/api/books', @options)
+    response = self.class.get('/api/books', @options)
+    raise 'External error' if response.code != 200
+
+    process_response response
   end
 
   def process_response(response)
-    result = { ISBN: @isbn }
+    result = Hash.new('Don\t exists')
     response_body = JSON.parse(response.body)
-    result[:title] = response_body[@isbn]['title']
-    result[:subtitle] = response_body[@isbn]['subtitle']
-    result[:number_of_pages] = response_body[@isbn]['number_of_pages']
-    result[:authors] = response_body[@isbn]['authors']
+    unless response_body.empty?
+      result = response_body[@isbn]
+               .slice('title', 'subtitle', 'number_of_pages', 'authors')
+               .merge(ISBN: @isbn)
+    end
     result
   end
 end
