@@ -7,6 +7,7 @@ Rails.application.routes.draw do
         resources :rents, only: [:index, :create]
       end
       resources :book_suggestions, only: [:create]
+      get 'open_library/:isbn', to: 'open_library#show'
     end
   end
 end
