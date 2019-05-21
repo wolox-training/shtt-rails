@@ -3,19 +3,21 @@ require 'httparty'
 
 describe OpenLibrary do
   context 'When fetching book info' do
+    url = 'https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&format=json&jscmd=data'
     before do
-      HTTParty.get('http://openlibrary.org/api/books')
+      OpenLibrary.new('0451526538').books
     end
 
     it 'response with the book info json' do
-      expect(WebMock).to have_requested(:get, 'openlibrary.org/api/books').once
+      expect(WebMock).to have_requested(:get, url).once
     end
   end
 
   context 'When raise an error' do
     it 'response with the book info json' do
       expect do
-        HTTParty.get('http://openlibrary.org/api/books/raise')
+        OpenLibrary.new('0451526538').books
+        OpenLibrary.new('0451526538').books
       end.to raise_error(StandardError, 'External error')
     end
   end
@@ -23,8 +25,10 @@ describe OpenLibrary do
   context 'When request timeout' do
     it 'response with the book info json' do
       expect do
-        HTTParty.get('http://openlibrary.org/api/books/to')
-      end.to raise_error(Net::OpenTimeout, 'execution expired')
+        OpenLibrary.new('0451526538').books
+        OpenLibrary.new('0451526538').books
+        OpenLibrary.new('0451526538').books
+      end.to raise_error(RuntimeError, 'External error')
     end
   end
 end

@@ -81,8 +81,6 @@ RSpec.configure do |config|
 
   config.before(:each) do
     open_library_request_success
-    open_library_request_raise
-    open_library_request_timeout
   end
 
   config.include_context 'Authenticated User', include_shared: true
