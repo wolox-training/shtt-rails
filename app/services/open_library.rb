@@ -9,7 +9,7 @@ class OpenLibrary
 
   def books
     response = self.class.get('/api/books', @options)
-    raise 'External error' if response.code != 200
+    raise 'External error' unless response.ok?
 
     process_response response
   end
