@@ -79,10 +79,7 @@ RSpec.configure do |config|
     end
   end
 
-  config.before(:each) do
-    open_library_request_success
-  end
-
   config.include_context 'Authenticated User', include_shared: true
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include_context 'Open library request', include_shared: true
 end
