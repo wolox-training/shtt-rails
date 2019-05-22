@@ -1,0 +1,11 @@
+{
+  "title": "The adventures of Tom Sawyer",
+  "number_of_pages": 216,
+  "authors": [
+      {
+          "url": "https://openlibrary.org/authors/OL18319A/Mark_Twain",
+          "name": "Mark Twain"
+      }
+  ],
+  "ISBN": "ISBN:0451526538"
+}
