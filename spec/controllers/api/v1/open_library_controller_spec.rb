@@ -4,9 +4,9 @@ describe Api::V1::OpenLibraryController do
   describe 'GET #show' do
     context 'When fetching the book info' do
       include_context 'Authenticated User'
-      @json_res = File.read('./spec/support/fixtures/show_open_library_controller_success.json')
 
       before do
+        @json_res = File.read('./spec/support/fixtures/show_open_library_controller_success.json')
         stubbed_service = instance_double(OpenLibrary)
         allow(stubbed_service).to receive(:books).and_return(@json_res)
         allow(OpenLibrary).to receive(:new).and_return(stubbed_service)
@@ -14,7 +14,7 @@ describe Api::V1::OpenLibraryController do
       end
 
       it 'response with book info json' do
-        expect(response.body) == @json_res
+        expect(response.body).to eq(@json_res)
       end
 
       it 'responds with 200 status' do
