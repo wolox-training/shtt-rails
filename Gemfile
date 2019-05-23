@@ -34,6 +34,7 @@ group :development, :test do
   gem 'faker', '~> 1.9.3'
   gem 'rspec-rails', '~> 3.8'
   gem 'rubocop', '~> 0.68.1', require: false
+  gem 'webmock', '~> 3.5.1'
 end
 
 group :development do
@@ -59,4 +60,4 @@ gem 'pundit', '~> 2.0.1'
 
 gem 'httparty', '~> 0.17.0'
 
-gem 'webmock', '~> 3.5.1'
+gem 'sidekiq-scheduler', '~> 3.0.0'
