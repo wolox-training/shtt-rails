@@ -58,3 +58,5 @@ gem 'sidekiq', '~> 5.2.7'
 gem 'pundit', '~> 2.0.1'
 
 gem 'httparty', '~> 0.17.0'
+
+gem 'sidekiq-scheduler', '~> 3.0.0'
