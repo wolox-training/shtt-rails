@@ -1,0 +1,2 @@
+class WprofService < ApplicationRecord
+end

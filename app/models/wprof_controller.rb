@@ -1,0 +1,2 @@
+class WprofController < ApplicationRecord
+end

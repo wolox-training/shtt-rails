@@ -1,5 +1,6 @@
 class OpenLibrary
   include HTTParty
+  include Wprof
   base_uri 'https://openlibrary.org'
 
   def initialize(isbn)

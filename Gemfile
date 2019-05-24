@@ -60,3 +60,5 @@ gem 'pundit', '~> 2.0.1'
 gem 'httparty', '~> 0.17.0'
 
 gem 'webmock', '~> 3.5.1'
+
+gem 'wor-prof'

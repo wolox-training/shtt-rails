@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190517220222) do
+ActiveRecord::Schema.define(version: 20190523210335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20190517220222) do
     t.string "genre", null: false
     t.string "author", null: false
     t.string "image", null: false
-    t.string "title", null: false
+    t.string "title", limit: 25, null: false
     t.string "editor", null: false
     t.string "year", null: false
     t.datetime "created_at", null: false
@@ -78,6 +78,50 @@ ActiveRecord::Schema.define(version: 20190517220222) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
+  end
+
+  create_table "wprof_controllers", force: :cascade do |t|
+    t.string "transaction_id"
+    t.float "total_time"
+    t.datetime "start_dt"
+    t.datetime "end_dt"
+    t.integer "code"
+    t.string "controller"
+    t.string "url"
+    t.float "db_runtime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_wprof_controllers_on_code"
+    t.index ["transaction_id"], name: "index_wprof_controllers_on_transaction_id"
+    t.index ["url"], name: "index_wprof_controllers_on_url"
+  end
+
+  create_table "wprof_methods", force: :cascade do |t|
+    t.string "transaction_id"
+    t.float "total_time"
+    t.datetime "start_dt"
+    t.datetime "end_dt"
+    t.string "method"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["method"], name: "index_wprof_methods_on_method"
+    t.index ["transaction_id"], name: "index_wprof_methods_on_transaction_id"
+  end
+
+  create_table "wprof_services", force: :cascade do |t|
+    t.string "transaction_id"
+    t.float "total_time"
+    t.datetime "start_dt"
+    t.datetime "end_dt"
+    t.integer "code"
+    t.string "service_hostname"
+    t.string "request_uri"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_wprof_services_on_code"
+    t.index ["request_uri"], name: "index_wprof_services_on_request_uri"
+    t.index ["service_hostname"], name: "index_wprof_services_on_service_hostname"
+    t.index ["transaction_id"], name: "index_wprof_services_on_transaction_id"
   end
 
   add_foreign_key "book_suggestions", "users"
