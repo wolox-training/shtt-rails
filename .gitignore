@@ -21,3 +21,6 @@
 # Ignore env files
 .env
 .env.*
+
+# Ignore coverage folder
+/coverage/*
