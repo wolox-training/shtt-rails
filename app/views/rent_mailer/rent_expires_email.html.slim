@@ -1,0 +1,9 @@
+
+doctype html
+html
+  head
+    title Rent expires
+  body
+    h1 #{t('user_info', first_name: @user['first_name'], last_name: @user['last_name'])}
+    p #{t('rent_expires', title: @book['title'])}.
+    p #{t('email_regards')}
