@@ -3,3 +3,5 @@ es:
   register_succesfull: "La renta del libro %{title} del autor %{author} realizó correctamente"
   info_rent: "Recuerda que la renta se realizó del día %{start_date} hasta %{end_date}, ten presente la fecha límite"
   email_regards: "Te deseamos un gran día"
+  user_info: "Hola, %{first_name} %{last_name}"
+  rent_expires: "La renta del libro %{title} finaliza hoy, recuerda hacer entrega del libro para no tener cobros adicionales"
