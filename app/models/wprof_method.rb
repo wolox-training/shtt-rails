@@ -1,0 +1,2 @@
+class WprofMethod < ApplicationRecord
+end
