@@ -67,3 +67,6 @@ gem 'webmock', '~> 3.5.1'
 gem 'sidekiq-scheduler', '~> 3.0.0'
 
 gem 'wor-prof'
+
+gem 'activeadmin'
+gem 'devise'
