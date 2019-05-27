@@ -1,6 +1,4 @@
-class ApplicationController < ActionController::API
-  include DeviseTokenAuth::Concerns::SetUserByToken
-  include Wor::Paginate
+class ApplicationController < ActionController::Base
   include Pundit
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found

@@ -30,7 +30,6 @@ describe OpenLibrary do
         expect do
           OpenLibrary.new('0451526538').books
           OpenLibrary.new('0451526538').books
-          OpenLibrary.new('0451526538').books
         end.to raise_error(RuntimeError, 'External error')
       end
     end
