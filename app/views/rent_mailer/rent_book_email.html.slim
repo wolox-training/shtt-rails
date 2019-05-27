@@ -1,0 +1,11 @@
+
+doctype html
+html
+  head
+    title Rent book
+  body
+    p #{t('record_created', date: @current_date)}
+    h1 #{@user['first_name']} #{@user['last_name']}
+    p #{t('register_succesfull', title: @book['title'], author: @book['author'])}.
+    p #{t('info_rent', start_date: @rent['start_date_rent'], end_date: @rent['end_date_rent'])}
+    p #{t('email_regards')}
